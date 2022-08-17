@@ -22,15 +22,32 @@ const circle = require('../src/circle');
 */
 
 describe('4 - Implemente os casos de teste para a função `circle`', () => {
-  it('Verifica se ao receber um raio, a função `circle` retorna um objeto contendo os valores esperados', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
     // Teste se circle retorna undefined, caso o parâmetro passado não seja um número.
+    it('Verificando o output caso o parâmetro não seja um número', () => {
+      expect(circle(typeof radius !== 'number')).toBe(undefined)
+    })
     // Teste se circle retorna um objeto.
+    it('Verificando se o output da função é um objeto', () => {
+      expect(circle(10)).toBeTruthy() 
+    })
     // Teste se o objeto retornado possui 3 propriedades.
+    it('Verificando se o output da função possui três propriedades', () => {
+      expect(((Object.keys(circle((5))).length))).toBe(3);
+    })
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    it('Verificando o output da função quando não há parâmetros', () => {
+      expect(circle()).toBe(undefined)
+    })
     // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à circunferência correta para um círculo de raio 2.
+    it('Verificando se o valor do raio está correto', () => {
+      expect(((Object.values(circle((2)))[0]))).toBe(2)
+    })
     // Teste se dentro do objeto retornado, a função retorna uma `key` com `value` igual à área correta para um círculo de raio 3.
+    it('Verificando se o valor da área está correta', () => {
+      expect(((Object.values(circle((3)))[1].toPrecision(2)))).toBe('28')
+    })
     // Teste se a função retorna, em um objeto, os dados corretos de um círculo de raio 3.
-  });
+    it('Verificando se o valor da círculo está correto', () => {
+      expect(((Object.values(circle((3)))[2].toPrecision(2)))).toBe('19')
+    })
 });
