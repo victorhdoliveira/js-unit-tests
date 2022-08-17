@@ -14,7 +14,16 @@
     estudante.name // Retorna: 'Leandrão, o Lobo Solitário'
     estudante.feedback() // Retorna: 'Eita pessoa boa!'
 */
+// const fbMessage = () => { 'Eita pessoa boa'; };
 
-const createStudent = () => {};
+function fbMessage() { return 'Eita pessoa boa!'; }
+
+const createStudent = (nome) => {
+  const obj = {
+  name: nome,
+  feedback: fbMessage,
+  };
+  return obj;
+};
 
 module.exports = createStudent;
