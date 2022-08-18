@@ -41,15 +41,48 @@ Retorno:
 }
 */
 
+const characters = {
+  arya: {
+    name: 'Arya Stark',
+    class: 'Rogue',
+    phrases: ['Not today', 'A girl has no name.'],
+  },
+  brienne: {
+    name: 'Brienne Tarth',
+    class: 'Knight',
+    phrases: ['Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'],
+  },
+  melissandre: {
+    name: 'Melissandre',
+    class: 'Necromancer',
+    phrases: ['Death By Fire Is The Purest Death.', 'For The Night Is Dark And Full Of Terrors.'],
+  },
+};
+
+
 describe('9 - Implemente os casos de teste da função `getCharacter`', () => {
-  it('Verifica se a função `getCharacter` retorna o objeto do personagem corretamente.', () => {
-    fail('Teste vazio!');
-    // ESCREVA SEUS TESTES ABAIXO:
     // Teste se a função, quando não recebe nenhum parâmetro, retorna undefined.
+    it('Verificando se o output quando não há parâmetros', () => {
+      expect(getCharacter()).toBe(undefined);
+    })
     // Teste se a função retorna o objeto correto para o parâmetro 'Arya',
+    it('Verificando o output quando o parâmetros é Ayra', () => {
+      expect(getCharacter('arya')).toStrictEqual(characters.arya)
+    })
     // Teste se a função retorna o objeto correto para o parâmetro 'Brienne',
+    it('Verificando o output quando o parâmetros é Brienne', () => {
+      expect(getCharacter('brienne')).toStrictEqual(characters.brienne)
+    })
     // Teste se a função retorna o objeto correto para o parâmetro 'Melissandre',
+    it('Verificando o output quando o parâmetros é Melissandre', () => {
+      expect(getCharacter('Melissandre')).toStrictEqual(characters.melissandre)
+    })
     // Teste se o parâmetro não é Case Sensitive, ou seja, independente de conter letras maiúsculas ou minúsculas retorna o mesmo objeto relativo a ele.
+    it('Verificando se o parâmetro é Case Sensitive', () => {
+      expect(getCharacter('ARYA')).toStrictEqual(getCharacter('arya'))
+    })
     // Teste se ao passar um nome que não está na tabela, a função retorna undefined.
+    it('Verificando se o output retorna undefined caso parâmetro esteja errado', () => {
+      expect(getCharacter('tyrion')).toBe(undefined);
+    })
   });
-});

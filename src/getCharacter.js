@@ -12,7 +12,7 @@ Melissandre |   Melissandre   | Necromancer | 'Death By Fire Is The Purest Death
 - Se o parâmetro não estiver na tabela, a função retorna `undefined`.
 - Se o parâmetro estiver, a função retorna um objeto no formato abaixo:
 
-  {
+  { 
     name: 'Nome do Personagem',
     class: 'Classe do Personagem' ,
     phrases: ['frase1', 'frase2']
