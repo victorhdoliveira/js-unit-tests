@@ -26,7 +26,6 @@ const myCounter = () => {
   return myArray;
 };
 
-console.log(myCounter());
 // Como as variaveis estavam utilizando "var" o escopo estava vazando.
 // Dessa forma, atualizei para "const" e "let", e também criei uma nova "let"
 
